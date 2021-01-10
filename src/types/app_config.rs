@@ -8,7 +8,7 @@ impl AppConfig {
      * the user's data_dir + path postfix (e.g. ~/.config/postfix)
      */
     pub fn new(path_postfix: &str) -> AppConfig {
-        let mut root_dir = std::path::PathBuf::from(match dirs::data_dir() {
+        let mut root_dir = std::path::PathBuf::from(match dirs::home_dir() {
             Some(dir) => dir,
             None => std::path::PathBuf::default(),
         });
